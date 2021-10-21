@@ -1,17 +1,14 @@
 image:
-  file: .gitpod.Dockerfile
+  file: gitpod/Dockerfile
 tasks:
   - name: Install asdf .tool-versions
     init: |
-      asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-      asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-      asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
       asdf install
   - name: Start docker-compose
     init: |
       docker-compose pull
     command: |
-      docker-compose up
+      docker-compose up -d
 vscode:
   extensions:
     - JakeBecker.elixir-ls@0.2.25:X1tqg5Hmluq055QJpf0/7A==
