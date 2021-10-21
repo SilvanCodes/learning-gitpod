@@ -9,7 +9,6 @@ RUN git clone --depth 1 https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch
     echo '. $HOME/.asdf/asdf.sh' >> $HOME/.profile
 
 # install asdf plugins
-ENV BUMP_TO_FORCE_GITPOD_UPDATE=4
-COPY ./install-asdf-plugins.sh $HOME/
+COPY gitpod/install-asdf-plugins.sh $HOME/
 RUN $HOME/install-asdf-plugins.sh && \
     rm $HOME/install-asdf-plugins.sh
